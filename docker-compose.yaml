@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  web:
+    image: connected_device_snmp:v1
+    deploy:
+      replicas: 3
+      restart_policy: 
+        condition: on-failure
+    ports:
+      - "8085:5000"
+    networks:
+      ctd_dev_overlay:
+        ipv4_address: 10.0.6.2
+    volumes:
+      - "./:/mnt/"
+networks:
+  ctd_dev_overlay:
+    driver: overlay
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.6.0/24

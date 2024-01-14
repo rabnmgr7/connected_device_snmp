@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connected Devices</title>
+</head>
+<body>
+    <h1>Connected Devices</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>IP Address</th>
+                <th>MAC Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for device in devices %}
+                <tr>
+                    <td>{{ device['ip'] }}</td>
+                    <td>{{ device['mac'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

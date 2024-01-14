@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  web:
+    build:
+      context: .
+      target: build1
+    image: connected_device_snmp:v1
